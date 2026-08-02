@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+
+# Python packaging
+dist/
+wheelhouse/
+*.whl
+
+# Native builds
+build/
+build-*/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.o
+*.a
+*.so
+*.dylib
+*.hx
+
+# Runtime output
+*.h5
+*.out
+*.log
+slurm-*.out
+outputs/
+results/
+wfperf-runs/
+*.joblib
+runs.csv
+
+# Spack-generated state
+.spack-env/
+spack-build-*/
+view/
+
+# Paper and workstation artifacts
+*.pdf
+*.pptx
+*.xlsx
+*:Zone.Identifier
+.DS_Store
+
+# Secrets and local configuration
+.env
+.env.*
+id_rsa
+id_rsa.*
+*.pem

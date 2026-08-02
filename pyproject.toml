@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wfperf"
+version = "0.1.0"
+description = "Characterization-oriented benchmarks for distributed and in situ workflows"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+parsl = [
+    "h5py>=3.8",
+    "numpy>=1.23",
+    "parsl>=2024.4.8",
+]
+wilkins = ["mpi4py>=3.1"]
+ml = [
+    "joblib>=1.2",
+    "numpy>=1.23",
+    "scikit-learn>=1.2",
+]
+test = [
+    "h5py>=3.8",
+    "numpy>=1.23",
+    "parsl>=2024.4.8",
+    "pytest>=7",
+    "scikit-learn>=1.2",
+]
+
+[project.scripts]
+wfperf = "wfperf.cli:main"
+wfperf-train = "wfperf.ml.training:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"wfperf.backends.wilkins" = ["native/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
